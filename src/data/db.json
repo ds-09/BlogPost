@@ -1,0 +1,23 @@
+{
+    "blogs":[
+        {
+            "title": "Blog 1",
+            "body": "lorem ipsum....",
+            "author":"Drishti",
+            "id":1
+        },
+        {
+            "title": "React",
+            "body": "lorem ipsum....",
+            "author":"Rohit",
+            "id":2
+        },
+        {
+            "title": "My new website",
+            "body": "lorem ipsum....",
+            "author":"Rohit",
+            "id":3
+        }
+
+    ]
+}
