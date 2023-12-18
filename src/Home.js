@@ -1,27 +1,16 @@
-// sfc enter
-import { useState, useEffect } from "react";  //hook
+// sfc enter  
 import BlogList from "./BlogList";
+import useFetch from "./useFetch";
 
 //props: used to pass data from parent(home) comp to child comp(blogList)
 const Home = () => {
-    //creating arr of blog lists
-    const [blogs, setBlogs]=useState([
-        {title: "My new website", body:"lorem ipsum....", author:"DS", id:1},
-        {title: "React", body:"lorem ipsum....", author:"AK", id:2},
-        {title: "Web Dev Tips", body:"lorem ipsum....", author:"AK", id:3}
-    ]);
+    const {data: blogs, isPending, error}= useFetch('http://localhost:8000/blogs');
     
-    const handleDelete=(id)=>{
-        const newBlogs= blogs.filter(blog => blog.id!==id);
-        setBlogs(newBlogs);
-    }
-    useEffect(()=>{
-
-    },[]);
-
     return (  
         <div className="home">
-            <BlogList blogs={blogs} title= "All blogs:" handleDelete={handleDelete}/>
+            { error && <div>{error}</div>}
+            { isPending && <div>Loading blogs...</div> }
+            {blogs && <BlogList blogs={blogs} title= "All blogs:"/>}
         </div>
     );
 }

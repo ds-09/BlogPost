@@ -3,6 +3,7 @@
 *{
   font-family: "PT Sans";
   color: #333;
+  
 }
 
 /* Navbar */
@@ -33,28 +34,126 @@
   color: rgb(202, 24, 131);
 }
 
+
 /* Home */
 .home{
   padding: 6px;
   width: 80%;
-  margin: 3rem auto;
+  margin: 2rem auto;
 }
 
-/* Home */
+.blog-link{
+  text-decoration: none;
+}
+
 .blog-prev{
   padding: 20px;
   margin: auto;
   font-size: smaller;
   border-bottom: 1px solid rgb(220, 220, 220);
+  
 }
 .blog-prev:hover{
   box-shadow: 1px 3px 5px rgba(0,0,0,0.1);
 }
 .blog-prev h4{
-  margin: 10px auto;
   color: rgb(202, 24, 131);
-  font-weight: 100;
+  
 }
 .blog-prev p{
   margin-top: 1px;
 }
+
+/* Create */
+.create{
+  padding: 6px;
+  width: 80%;
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.create h4{
+  color: rgb(202, 24, 131);
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+form label{
+  margin-top: 0.5rem;
+  padding: 5px 0;
+}
+
+form input, textarea, select{
+  border: 1.5px solid;
+  box-sizing: border-box;
+  border-radius: 6px;
+  background-color: white;
+  text-align: center;
+  padding: 5px;
+}
+
+form button{
+  color: white;
+  background-color: rgb(202, 24, 131);
+  width: 25%;
+  margin: 1.5rem auto;
+  border: 0cap;
+  border-radius: 6px;
+  padding: 10px;
+  align-items: center;
+}
+
+@media screen and (max-width: 1200px){
+    form button{
+      width: 30%;
+  }
+}
+@media screen and (max-width: 900px){
+  form button{
+    width: 50%;
+}
+}
+
+
+
+/* Blog Details */
+.blog-details{
+  padding: 6px;
+  width: 80%;
+  margin: 2rem auto;
+}
+
+h4{
+  margin: 10px auto;
+  font-weight: 100;
+  
+}
+
+.blog-details h3{
+  margin-bottom: auto;
+  color: rgb(202, 24, 131);
+  
+}
+.blog-details p{
+  margin-top: auto;
+  font-size: small;
+}
+
+.blog-details button{
+  color: white;
+  background-color: rgb(202, 24, 131);
+  width: 25%;
+  margin: 1.5rem auto;
+  border: 0cap;
+  border-radius: 6px;
+  padding: 10px;
+  align-items: center;
+}
+
+
