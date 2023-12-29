@@ -7,10 +7,13 @@ const middlewares = defaults();
 
 const dataFile = path.join(__dirname, 'db.json');
 
+// Apply middleware directly
 server.use(middlewares);
-server.use('/.netlify/functions/json-server', (req, res, next) => {
+
+// Define routes directly
+server.get('/.netlify/functions/json-server/*', (req, res) => {
   req.url = `/${dataFile}${req.url}`;
-  next();
+  server.router(req, res);
 });
 
 exports.handler = server.router;
