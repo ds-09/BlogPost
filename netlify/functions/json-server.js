@@ -1,12 +1,18 @@
 // netlify/functions/json-server.js
-import { create, router as _router, defaults } from 'json-server';
-import { join } from 'path'; 
+import { create, defaults } from 'json-server';
+import { join } from 'path';
 
 const server = create();
-const router = _router(join(__dirname, 'db.json'));
 const middlewares = defaults();
 
-server.use(middlewares);
-server.use(router);
+const dataFile = join(__dirname, 'db.json');
 
-export const handler = server.createHandler();
+server.use(middlewares);
+server.use('/.netlify/functions/json-server', (req, res, next) => {
+  req.url = `/${dataFile}${req.url}`;
+  next();
+});
+
+export const handler = server.createHandler({
+  base: '/.netlify/functions/json-server',
+});
