@@ -4,7 +4,7 @@ import useFetch from "./useFetch";
 
 //props: used to pass data from parent(home) comp to child comp(blogList)
 const Home = () => {
-    const {data: blogs, isPending, error}= useFetch('https://blogsposts.netlify.app/.netlify/functions/json-server');
+    const {data: blogs, isPending, error}= useFetch('http://localhost:8000/blogs');
     
     return (  
         <div className="home">
