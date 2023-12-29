@@ -16,7 +16,7 @@ const Create = () => {
 
         setIsPending(true);
 
-        fetch(`http://localhost:8000/blogs`,{
+        fetch(`https://blogsposts.netlify.app/.netlify/functions/json-server`,{
             method: 'POST',
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify(blog)

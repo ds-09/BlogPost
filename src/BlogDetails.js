@@ -6,9 +6,11 @@ const BlogDetails = () => {
 
     const {id}=useParams();
     const history=useHistory();
-    const {data: blog, isPending, error}= useFetch('http://localhost:8000/blogs/'+id);;
+    const apiUrl = 'https://blogsposts.netlify.app/.netlify/functions/json-server';
+    const { data: blog, isPending, error } = useFetch(`${apiUrl}/blogs/${id}`);
+
     const handleClick=()=>{
-        fetch(`http://localhost:8000/blogs/`+blog.id,{
+        fetch(`${apiUrl}/blogs/${blog.id}`+blog.id,{
             method: 'DELETE'
         }).then(()=>{
             history.push("/");
