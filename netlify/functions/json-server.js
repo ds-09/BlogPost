@@ -13,4 +13,4 @@ server.use('/.netlify/functions/json-server', (req, res, next) => {
   next();
 });
 
-
+exports.handler = server.router;
