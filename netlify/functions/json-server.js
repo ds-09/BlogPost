@@ -13,6 +13,4 @@ server.use('/.netlify/functions/json-server', (req, res, next) => {
   next();
 });
 
-export const handler = server.createHandler({
-  base: '/.netlify/functions/json-server',
-});
+
