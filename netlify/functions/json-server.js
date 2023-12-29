@@ -1,11 +1,11 @@
 // netlify/functions/json-server.js
 import { create, defaults } from 'json-server';
-import { join } from 'path';
+import path from 'path';
 
 const server = create();
 const middlewares = defaults();
 
-const dataFile = join(__dirname, 'db.json');
+const dataFile = path.join(__dirname, 'db.json');
 
 server.use(middlewares);
 server.use('/.netlify/functions/json-server', (req, res, next) => {
