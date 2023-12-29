@@ -14,7 +14,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "start:both": "concurrently \"npm start\" \"npx json-server --watch data/db.json --port 8000\"",
+    "start:both": "concurrently \"npm start\" \"npx netlify dev\"",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
